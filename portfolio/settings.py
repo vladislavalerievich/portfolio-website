@@ -128,3 +128,5 @@ EMAIL_HOST ='smtp.gmail.com'
 EMAIL_HOST_USER = 'your_email@gmail.com'
 EMAIL_HOST_PASSWORD = '*********'
 EMAIL_PORT = 587
+
+ALLOWED_HOSTS = [".herokuapp.com", "vlad-moroshan"]
