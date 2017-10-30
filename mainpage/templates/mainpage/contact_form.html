@@ -1,0 +1,22 @@
+<form action="#contact" method="post" id="contact-form" role="form">
+  <div class="ajax-hidden">
+    {% if messages %}
+      <ul class="messages" style="list-style-type: none;color: red;text-align:center">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% for field in form %}
+    {% csrf_token %}
+        <div class="form-group wow fadeInUp">
+          <div class="">{{ field }} </div>
+        </div>
+    {% endfor %}
+     <div id="button">
+         <input id="submit" class="submit_button btn btn-lg btn-block wow fadeInUp" type="submit" value="SEND MESSAGE" />
+     </div>
+      </div>
+  <div class="ajax-response"></div>
+</form>
