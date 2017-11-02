@@ -4,7 +4,7 @@ This is a Django-based personal website I created for myself. The current theme 
 I am releasing the full source code for the site so that others may benefit from the code I've written.
 Live example is [here](https://vlad-moroshan.herokuapp.com)
 
-#Installation and Running
+# Installation and Running
 
 * Run the command `git clone <repository-url>` to have this repository locally in your computer
 * change into the new directory
