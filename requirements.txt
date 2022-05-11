@@ -1,3 +1,0 @@
-Django==1.11.6
-gunicorn==19.6.0
-whitenoise==3.2.1
