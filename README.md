@@ -1,6 +1,7 @@
 # Django-personal-website (WIP)
 
-This is a Django-based personal website I created for myself. Currently, it is work in progress.
+Currently, new version is under development.
 
-Deprecated version is [here](https://vlad-moroshan.herokuapp.com)
- 
+
+Deprecated version is in the branch `deprecated`. 
+You can view live demo [on heroku](https://vlad-moroshan.herokuapp.com). 
