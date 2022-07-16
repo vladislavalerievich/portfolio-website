@@ -72,6 +72,7 @@ class Skill(Orderable):
 
     class Meta:
         unique_together = ('name', 'dev_icon')
+        ordering = ['sort_order']
 
     def __str__(self):
         return self.name
@@ -114,6 +115,7 @@ class ProjectTechnologiesOrderable(Orderable):
 
     class Meta:
         unique_together = ('project', 'used_technology')
+        ordering = ['sort_order']
 
 
 @register_snippet
