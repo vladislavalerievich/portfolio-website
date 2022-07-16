@@ -4,9 +4,6 @@ FROM python:3.9-slim-buster
 # Add user that will be used in the container.
 RUN useradd wagtail
 
-# Port used by this container to serve HTTP.
-EXPOSE 8000
-
 # Install system packages required by Wagtail and Django.
 RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-recommends \
     build-essential \
@@ -47,6 +44,7 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 ENV DJANGO_SETTINGS_MODULE=portfolio.settings.prod
 
+# Port used by this container to serve HTTP.
 ARG PORT
 ENV PORT=$PORT
 EXPOSE $PORT
