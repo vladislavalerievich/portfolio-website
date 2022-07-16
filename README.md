@@ -56,7 +56,8 @@ docker run -it portfolio:latest
 8) Then provide your email and password from email account into environment variables `EMAIL_HOST_USER`
    and `EMAIL_HOST_PASSWORD`. in Heroku config vars settings.
 9) Deploy your app by running: `git push heroku master`.
-10) Go to `<your app name>.herokuapp.com` to see the published web application.
+10) Create superuser by running: `heroku run python manage.py createsuperuser`.
+11) Go to `<your app name>.herokuapp.com` to see the published web application.
 
 Heroku uses `Dockerfile` to build and run the application.
 
