@@ -3,6 +3,14 @@ import dj_database_url
 
 DEBUG = False
 
+INSTALLED_APPS += [
+    'whitenoise.runserver_nostatic',
+]
+
+MIDDLEWARE += [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+]
+
 DATABASE_URL = os.environ.get("DATABASE_URL")
 DATABASES["default"] = dj_database_url.config(default=DATABASE_URL, conn_max_age=500, ssl_require=True)
 
