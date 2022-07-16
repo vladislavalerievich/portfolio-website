@@ -70,9 +70,8 @@ class Skill(Orderable):
     name = models.CharField(max_length=255)
     dev_icon = models.CharField(max_length=255, help_text="Name of a corresponding devicon icon.")
 
-    class Meta:
+    class Meta(Orderable.Meta):
         unique_together = ('name', 'dev_icon')
-        ordering = ['sort_order']
 
     def __str__(self):
         return self.name
@@ -113,9 +112,8 @@ class ProjectTechnologiesOrderable(Orderable):
         SnippetChooserPanel('used_technology'),
     ]
 
-    class Meta:
+    class Meta(Orderable.Meta):
         unique_together = ('project', 'used_technology')
-        ordering = ['sort_order']
 
 
 @register_snippet
