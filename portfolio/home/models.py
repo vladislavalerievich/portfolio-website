@@ -15,8 +15,8 @@ from colorfield.fields import ColorField
 
 class HomePage(AbstractEmailForm):
     """
-    HomePage model contains data for the main sections: Site Owner, About, Skills, Projects, and a Contact form.
-    Inherited from AbstractEmailForm to be able to serve a contact form on the landing page instead of a separate page.
+    HomePage model contains data for the main sections: Site Owner, About, Skills, Projects, and Contact Form.
+    Inherited from AbstractEmailForm to be able to serve a Contact Form on the landing page instead of a separate page.
     """
 
     max_count = 1
@@ -40,7 +40,7 @@ class HomePage(AbstractEmailForm):
 
         FieldPanel('about', classname="full"),
 
-        InlinePanel('skills', label="Skills", min_num=6, max_num=30),
+        InlinePanel('skills', label="Skills", min_num=1, max_num=30),
 
         MultiFieldPanel([
             FieldPanel('projects_note', classname="full"),
