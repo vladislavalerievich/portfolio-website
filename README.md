@@ -65,8 +65,9 @@ To deploy your application on Heroku, you need to do several things:
    Then provide your email and password into environment variables `EMAIL_HOST_USER`
    and `EMAIL_HOST_PASSWORD` in Heroku config vars settings.
 9) To store media files you need to configure storage. I have chosen [Cloudinary](https://cloudinary.com/).
-   Register and provide data into environment variables `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY`
-   and `CLOUDINARY_API_SECRET` in Heroku config settings.
+   Run: `heroku addons:add cloudinary` and proceed with finishing account setup. Then provide data from dashboard into
+   environment variables `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY` and `CLOUDINARY_API_SECRET` in Heroku config
+   settings.
 10) Deploy your app by running: `git push heroku master`.
 11) Create a superuser by running: `heroku run python manage.py createsuperuser`.
 12) Go to `<your app name>.herokuapp.com` to see the published web application.
