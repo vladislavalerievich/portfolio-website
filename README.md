@@ -58,14 +58,15 @@ To deploy your application on Heroku, you need to do several things:
 4) Run: `heroku create <your app name>` to create the Heroku application.
 5) Run: `heroku stack:set container` so Heroku knows this is a containerized application.
 6) Run: `heroku addons:create heroku-postgresql:hobby-dev`, creating the Postgres add-on for Heroku.
-7) Set the URL of your application into environment variable`HOST_NAME` in Heroku config settings.
+7) Set the URL (e.g. `https://<app name>.herokuapp.com)` of your application into environment variable`HOST_NAME` in
+   Heroku config settings.
 8) To receive emails from the contact form you need an email account. If you choose Google, you need to
    configure [Sign in with App Passwords]( https://support.google.com/accounts/answer/185833?hl=en) for this account.
    Then provide your email and password into environment variables `EMAIL_HOST_USER`
    and `EMAIL_HOST_PASSWORD` in Heroku config vars settings.
 9) To store media files you need to configure storage. I have chosen [Cloudinary](https://cloudinary.com/).
-   Register here and provide data into environment variables `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY`
-   and `CLOUDINARY_API_SECRET` in Heroku config vars settings.
+   Register and provide data into environment variables `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY`
+   and `CLOUDINARY_API_SECRET` in Heroku config settings.
 10) Deploy your app by running: `git push heroku master`.
 11) Create a superuser by running: `heroku run python manage.py createsuperuser`.
 12) Go to `<your app name>.herokuapp.com` to see the published web application.
