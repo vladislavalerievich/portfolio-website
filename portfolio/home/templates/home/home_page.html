@@ -144,7 +144,7 @@
                                 <p class="project-finished-date text-center text-secondary">
                                     <i>{{ project.finished_date|date:'d F Y' }}</i>
                                 </p>
-                                <div class="card-text project-description">{{ project.description|richtext }}</div>
+                                <div class="card-text project-description mb-4">{{ project.description|richtext }}</div>
 
                                 <div class="project-technologies">
                                     {% for iter in project.project_technologies.all %}
