@@ -139,6 +139,7 @@ i[class^="devicon"] span {
 
 .project-description {
     text-align: justify;
+    padding-bottom: 0.5rem;
 }
 
 .project-technologies {
