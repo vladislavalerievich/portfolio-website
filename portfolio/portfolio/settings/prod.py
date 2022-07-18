@@ -5,7 +5,6 @@ DEBUG = False
 
 INSTALLED_APPS += [
     'whitenoise.runserver_nostatic',
-
     'cloudinary',
     'cloudinary_storage',
 ]
