@@ -2,7 +2,7 @@
 
 This is a Python Django-based personal portfolio website.
 
-The website uses [Wagtail CMS](https://wagtail.org/). Wagtail is a Django Content Management System.
+The website uses [Wagtail CMS](https://github.com/wagtail/wagtail). Wagtail is a Django Content Management System.
 
 All content: personal information, portfolio projects, social media links, Google Analytics tracking code, etc. can be
 adjusted in Wagtail admin.
@@ -36,15 +36,6 @@ python manage.py runserver
 
 Go to `http://127.0.0.1:8000/admin/` in your browser to the Wagtail CMS admin to populate it with your data and to
 configure homepage.
-
-#### Run Dockerfile locally
-
-If you want to build and run the production Dockerfile locally, use these commands:
-
-```shell
-docker build -t portfolio:latest .  
-docker run -it portfolio:latest
-```
 
 ## Production deployment
 
