@@ -2,15 +2,18 @@ from django.db import models
 from wagtail.admin.panels import MultiFieldPanel, FieldPanel
 from wagtail.contrib.settings.models import BaseSetting, register_setting
 from wagtail.fields import RichTextField
+from wagtail.images.edit_handlers import ImageChooserPanel
 
 
 @register_setting
 class SiteSettings(BaseSetting):
     author_name = models.CharField(max_length=128)
+    favicon = models.ForeignKey('wagtailimages.Image', null=True, on_delete=models.SET_NULL, related_name='+')
     copyright_text = RichTextField()
 
     panels = [
         FieldPanel("author_name"),
+        ImageChooserPanel('favicon'),
         FieldPanel("copyright_text"),
     ]
 
