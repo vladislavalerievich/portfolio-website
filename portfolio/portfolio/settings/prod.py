@@ -22,7 +22,7 @@ CLOUDINARY_STORAGE = {
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 CSRF_TRUSTED_ORIGINS = ['https://*.127.0.0.1', os.environ.get("HOST_NAME")]
-
+ALLOWED_HOSTS = ['localhost','109.106.244.81','www.galaktoza.de', 'galaktoza.de']
 DATABASE_URL = os.environ.get("DATABASE_URL")
 DATABASES["default"] = dj_database_url.config(default=DATABASE_URL, conn_max_age=500, ssl_require=True)
 
