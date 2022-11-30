@@ -98,7 +98,9 @@ class Project(Orderable, ClusterableModel):
     ]
 
     def clean(self):
-        if self.finished_date > timezone.now():
+        if self.finished_date is None: 
+            raise forms.ValidationError("Please fill in the required fields!")
+        if self.finished_date and self.finished_date > timezone.now():
             raise forms.ValidationError("Finished date cannot be in the future!")
 
 
