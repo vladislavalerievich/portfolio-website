@@ -3,6 +3,7 @@ import dj_database_url
 import mimetypes
 
 mimetypes.add_type("text/javascript", ".js", True)
+mimetypes.add_type("text/html", ".html", True)
 
 DEBUG = False
 
