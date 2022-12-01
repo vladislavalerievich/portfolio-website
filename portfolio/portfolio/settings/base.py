@@ -15,6 +15,7 @@ import os
 
 from django.core.management.utils import get_random_secret_key
 
+DEBUG = True # overwritten in prod.py
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
@@ -67,6 +68,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware" if DEBUG==False else None,
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
 ]
 
