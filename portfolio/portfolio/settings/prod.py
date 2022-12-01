@@ -26,7 +26,13 @@ ALLOWED_HOSTS = ['localhost','109.106.244.81','www.galaktoza.de', 'galaktoza.de'
 
 # SQLite3 for now, CHANGE THIS LATER
 # DATABASE_URL = os.path.join(BASE_DIR, "db.sqlite3") # os.environ.get("DATABASE_URL")
-DATABASES["default"] = dj_database_url.config(default='sqlite:///db.sqlite3') # , conn_max_age=500, ssl_require=True)
+# DATABASES["default"] = dj_database_url.config(default='sqlite:///db.sqlite3') # , conn_max_age=500, ssl_require=True)
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+    }
+}
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
