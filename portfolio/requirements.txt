@@ -1,0 +1,10 @@
+Django==4.0.5
+wagtail==3.0.1
+django-colorfield==0.7.1
+django-widget-tweaks==1.4.12
+dj-database-url== 0.5.0
+django-cloudinary-storage==0.3.0
+cloudinary==1.29.0
+psycopg2-binary==2.9.3
+whitenoise==6.1.0
+

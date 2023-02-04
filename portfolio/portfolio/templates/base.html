@@ -1,0 +1,94 @@
+{% load static wagtailcore_tags wagtailimages_tags wagtailuserbar %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% if settings.site_settings.GoogleAnalyticsSettings.analytics_code %}
+        {{ settings.site_settings.GoogleAnalyticsSettings.analytics_code|safe }}
+    {% endif %}
+
+    <title>
+        {% block title %}
+            {% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }}{% endif %}
+        {% endblock %}
+        {% block title_suffix %}
+            {% wagtail_site as current_site %}
+            {% if current_site and current_site.site_name %}- {{ current_site.site_name }}{% endif %}
+        {% endblock %}
+    </title>
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    {% image settings.site_settings.SiteSettings.favicon original as favicon %}
+    <link rel="icon" type="image/x-icon" href="{{ favicon.url }}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet"/>
+
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <!-- Global core theme CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/portfolio.css' %}">
+    <!-- Devicon CSS - set of icons representing programming languages, designing, and development tools -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
+    {% block extra_css %}
+        {# Override this in templates to add extra stylesheets #}
+    {% endblock %}
+</head>
+
+<body id="page-top" class="{% block body_class %}{% endblock %}">
+
+{#{% wagtailuserbar %}#}
+
+{% block content %}{% endblock %}
+
+<!-- Footer-->
+<footer class="footer text-center">
+    <div class="container">
+        <div class="text-center">
+            <h4 class="text-uppercase mb-4">Follow me</h4>
+
+            <!-- Footer Social Icons-->
+            {% if settings.site_settings.SocialMediaSettings.linkedin %}
+                <a class="btn btn-outline-light btn-social mx-1"
+                   href="{{ settings.site_settings.SocialMediaSettings.linkedin }}"
+                   target="_blank"> <i class="fab fa-fw fa-linkedin-in"></i> </a>
+            {% endif %}
+
+            {% if settings.site_settings.SocialMediaSettings.github %}
+                <a class="btn btn-outline-light btn-social mx-1"
+                   href="{{ settings.site_settings.SocialMediaSettings.github }}"
+                   target="_blank"> <i class="fab fa-fw fa-github"></i> </a>
+            {% endif %}
+
+            {% if settings.site_settings.SocialMediaSettings.skype %}
+                <a class="btn btn-outline-light btn-social mx-1"
+                   href="skype:{{ settings.site_settings.SocialMediaSettings.skype }}?chat"
+                   target="_blank"> <i class="fab fa-fw fa-skype"></i> </a>
+            {% endif %}
+
+            {% if settings.site_settings.SocialMediaSettings.instagram %}
+                <a class="btn btn-outline-light btn-social mx-1"
+                   href="{{ settings.site_settings.SocialMediaSettings.instagram }}"
+                   target="_blank"> <i class="fab fa-fw fa-instagram"></i> </a>
+            {% endif %}
+        </div>
+    </div>
+</footer>
+
+<!-- Copyright Section-->
+<div class="copyright py-4 text-center text-white">
+    <div class="container">
+        {{ settings.site_settings.SiteSettings.copyright_text | richtext }}
+    </div>
+</div>
+
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+{# Global core javascript #}
+<script type="text/javascript" src="{% static 'js/portfolio.js' %}"></script>
+</body>
+</html>

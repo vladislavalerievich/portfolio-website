@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+    <nav id="mainNav" class="navbar bg-secondary text-uppercase fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">{{ self.title }}</a>
+        </div>
+    </nav>
+
+    <section class="thank-you-section bg-primary text-center text-white">
+        <p>{{ self.thank_you_text|richtext }}</p>
+        <a class="btn btn-secondary mb-5" href="/">Go back</a>
+    </section>
+{% endblock %}
